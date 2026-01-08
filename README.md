@@ -2,6 +2,11 @@
 #  Fraud Real-Time Dashboard — Backend  
 **FastAPI · RAG · Azure OpenAI · Azure Cognitive Search**
 
+**Dashboard Link**
+
+https://fraud-monitoring-dashboard--sanataj0409.replit.app
+
+
 [![FastAPI](https://img.shields.io/badge/FastAPI-async-009688?logo=fastapi&logoColor=white)]  
 [![Docker](https://img.shields.io/badge/Docker-containerized-2496ED?logo=docker&logoColor=white)]  
 [![Azure](https://img.shields.io/badge/Azure-Container%20Apps-0078D4?logo=microsoftazure&logoColor=white)]
