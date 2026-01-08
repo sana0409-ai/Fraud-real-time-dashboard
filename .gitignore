@@ -1,0 +1,5 @@
+
+# Large local datasets
+/data/transactions.csv
+/data/*.csv
+
