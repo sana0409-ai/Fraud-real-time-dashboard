@@ -1,0 +1,29 @@
+properties:
+  template:
+    containers:
+      - name: fraud-backend
+        image: fraudacrsana123.azurecr.io/fraud-backend:v5
+        probes:
+          - type: startup
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 40
+            periodSeconds: 5
+            failureThreshold: 30
+
+          - type: liveness
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 40
+            periodSeconds: 10
+            failureThreshold: 5
+
+          - type: readiness
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 40
+            periodSeconds: 5
+            failureThreshold: 5

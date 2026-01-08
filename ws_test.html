@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>WebSocket Stream Test</title>
+    <style>
+      body { font-family: monospace; background: #111; color: #0f0; }
+      pre { white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <h3>Live WebSocket Stream</h3>
+    <pre id="out">Connecting...</pre>
+
+    <script>
+      const out = document.getElementById("out");
+      const ws = new WebSocket("ws://localhost:8000/ws");
+
+      ws.onopen = () => {
+        out.textContent = "✅ Connected to WebSocket\n\n";
+      };
+
+      ws.onmessage = (event) => {
+        out.textContent =
+          event.data + "\n\n----------------\n\n" + out.textContent;
+      };
+
+      ws.onerror = (err) => {
+        out.textContent = "❌ WebSocket error";
+        console.error(err);
+      };
+
+      ws.onclose = () => {
+        out.textContent = "❌ WebSocket closed";
+      };
+    </script>
+  </body>
+</html>
